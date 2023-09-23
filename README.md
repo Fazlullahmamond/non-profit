@@ -24,14 +24,12 @@ php artisan migrate
 ```
 
 ## Further Ideas
-
-Of course we only had time in the Laravel From Scratch series to review the essentials of a blogging platform. You can certainly take this many 
-steps further. Here are some quick ideas that you might play with.
-
-1. Add a `status` column to the posts table to allow for posts that are still in a "draft" state. Only when this status is changed to "published" should they show up in the blog feed. 
-2. Update the "Edit Post" page in the admin section to allow for changing the author of a post.
-3. Add an RSS feed that lists all posts in chronological order.
-4. Record/Track and display the "views_count" for each post.
-5. Allow registered users to "follow" certain authors. When they publish a new post, an email should be delivered to all followers.
-6. Allow registered users to "bookmark" certain posts that they enjoyed. Then display their bookmarks in a corresponding settings page.
-7. Add an account page to update your username and upload an avatar for your profile.
+Here's some description for non-profit project created in Laravel v10 and FilamentPHP v3:
+1. The project is developed using Laravel v10, a popular PHP framework known for its robustness, security, and scalability. It provides a solid foundation for building web applications.
+2. FilamentPHP v3, a powerful admin panel package, is integrated into the project. It simplifies the development process by providing a user-friendly interface for managing the application's backend functionality.
+3. The project offers CRUD (Create, Read, Update, Delete) operations for categories, appeals, blogs, works, and volunteers. This means that administrators can easily create, view, update, and delete records for each of these entities.
+4. The application provides a comprehensive category management system. Administrators can create and manage different categories to organize the non-profit organization's initiatives, campaigns, projects, or any other relevant data.
+5. A dedicated appeals management system is incorporated into the project. Administrators can create and manage fundraising appeals, enabling the non-profit organization to effectively raise funds for specific causes or projects.
+6. The project includes a blogging system that allows administrators to create and manage blog posts. This feature enables the non-profit organization to share updates, news, stories, or any other relevant content with its audience.
+7. The application integrates beautiful charts for data analysis. These charts provide visual representations of various metrics, such as donation amounts, volunteer participation, or project progress. They help administrators gain insights and make informed decisions based on the data.
+Overall, your non-profit project built in Laravel v10 and FilamentPHP v3 offers a robust and user-friendly system for managing categories, appeals, blogs, works, volunteers, and provides insightful data analysis through visually appealing charts.
