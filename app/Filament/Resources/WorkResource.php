@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\WorkResource\Pages;
 use App\Filament\Resources\WorkResource\RelationManagers;
+use App\Models\Category;
 use App\Models\Work;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -34,7 +35,7 @@ class WorkResource extends Resource
                     ->schema([
                         TextInput::make('title')->required(),
                         RichEditor::make('description')->required(),
-                        Select::make('category_id')->label('Category')->required()->relationship('category', 'name')->searchable()->preload(),
+                        Select::make('category_id')->label('Category')->options(Category::all()->pluck('name', 'id'))->required()->searchable()->preload(),
                         FileUpload::make('image')->disk('work_image')->image()->imageEditor()->visibility('public'),
                         Toggle::make('status'),
                     ])

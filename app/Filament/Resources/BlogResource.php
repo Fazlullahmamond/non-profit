@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BlogResource\Pages;
 use App\Filament\Resources\BlogResource\RelationManagers;
 use App\Models\Blog;
+use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\Card;
@@ -33,7 +34,7 @@ class BlogResource extends Resource
                     ->schema([
                         TextInput::make('title')->required(),
                         RichEditor::make('description')->required(),
-                        Select::make('category_id')->label('Category')->required()->relationship('category', 'name')->searchable()->preload(),
+                        Select::make('category_id')->label('Category')->options(Category::all()->pluck('name', 'id'))->required()->searchable()->preload(),
                         FileUpload::make('image')->disk('blog_image')->image()->imageEditor()->visibility('public'),
                         Toggle::make('status'),
                     ])
