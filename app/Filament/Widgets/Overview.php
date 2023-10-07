@@ -16,19 +16,22 @@ class Overview extends BaseWidget
         $today = now()->startOfDay();
         $appealsToday = Appeal::whereDate('created_at', $today)->count();
         $appeal_desc = "There are total of {$appealsToday} appeals saved today.";
+        $appealData = Appeal::monthlyChartData();
 
         $blogs = Blog::count();
         $blogsToday = Blog::whereDate('created_at', $today)->count();
         $blog_desc = "There are total of {$blogsToday} blog posts today.";
+        $blogData = Blog::monthlyChartData();
 
         $volunteers = Volunteer::count();
         $volunteersToday = Volunteer::whereDate('created_at', $today)->count();
         $volunteer_desc = "There are total of {$volunteersToday} volunteers created today.";
+        $volunteerData = Volunteer::monthlyChartData();
 
         return [
-            Stat::make('Total Appeals', $appeals)->chart([7, 2, 10, 3, 15, 4, 17])->description($appeal_desc)->descriptionIcon('heroicon-o-archive-box-arrow-down')->color('primary'),
-            Stat::make('Total Blog Posts', $blogs)->chart([7, 2, 10, 3, 15, 4, 17])->description($blog_desc)->descriptionIcon('heroicon-o-newspaper')->color('success'),
-            Stat::make('Total Volunteers', $volunteers)->chart([7, 2, 10, 3, 15, 4, 17])->description($volunteer_desc)->descriptionIcon('heroicon-o-users')->color('warning'),
+            Stat::make('Total Appeals', $appeals)->chart($appealData)->description($appeal_desc)->descriptionIcon('heroicon-o-archive-box-arrow-down')->color('primary'),
+            Stat::make('Total Blog Posts', $blogs)->chart($blogData)->description($blog_desc)->descriptionIcon('heroicon-o-newspaper')->color('success'),
+            Stat::make('Total Volunteers', $volunteers)->chart($volunteerData)->description($volunteer_desc)->descriptionIcon('heroicon-o-users')->color('warning'),
         ];
     }
 }

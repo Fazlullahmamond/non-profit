@@ -11,4 +11,13 @@ class Appeal extends Model
 
     protected $fillable = ['title', 'description', 'donation_goal', 'donated', 'image', 'status'];
 
+    public function scopeMonthlyChartData($query)
+    {
+        return $query
+            ->selectRaw('COUNT(*) as total, DATE_FORMAT(created_at, "%Y-%m") as month')
+            ->groupBy('month')
+            ->orderBy('month')
+            ->pluck('total', 'month')
+            ->toArray();
+    }
 }

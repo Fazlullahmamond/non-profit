@@ -11,6 +11,7 @@ use Filament\Forms\Form;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -25,12 +26,14 @@ class BlogResource extends Resource
 {
     protected static ?string $model = Blog::class;
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+    protected static ?string $navigationGroup = "Media";
+
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Card::make()
+                Section::make()
                     ->schema([
                         TextInput::make('title')->required(),
                         RichEditor::make('description')->required(),
