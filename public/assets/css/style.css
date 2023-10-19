@@ -1,6 +1,6 @@
 
-/* 
-Template name : Kindness - Nonprofit, Crowdfunding & Charity HTML5 Template 
+/*
+Template name : Kindness - Nonprofit, Crowdfunding & Charity HTML5 Template
 Author : LegendTheme
 */
 
@@ -23,13 +23,13 @@ Author : LegendTheme
 	15.0 - Causes Page
 	16.0 - About Page
 	17.0 - Contact Us Page
-	
+
  =============================*/
- 
-/* import google font */ 
+
+/* import google font */
 @import "https://fonts.googleapis.com/css?family=Raleway:400,700,800,900,500|Lato:400,700,900";
 
- 
+
 /* 0.0 - General Styles */
 h1,
 h2,
@@ -886,7 +886,8 @@ form.comment-form .field h4 {
   margin-bottom: 10px;
 }
 form.comment-form .field input,
-form.comment-form .field textarea {
+form.comment-form .field textarea,
+form.comment-form .field select{
   display: block;
   width: 100%;
   height: 45px;
@@ -898,6 +899,8 @@ form.comment-form .field textarea {
 }
 form.comment-form .field input:active,
 form.comment-form .field textarea:active,
+form.comment-form .field select:active,
+form.comment-form .field select:focus,
 form.comment-form .field input:focus,
 form.comment-form .field textarea:focus {
   border: 1px solid transparent;
@@ -908,7 +911,19 @@ form.comment-form .field textarea {
   padding: 15px ;
 }
 form.comment-form.altered .field {
-  padding: 0 15px;
+  padding: 10px 15px;
+}
+
+.text-danger{
+    color: red !important;
+}
+.success-alert {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px; /* Padding around the text */
+    margin: 10px 0; /* Margin to separate it from other elements */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center-align the text */
 }
 form.comment-form.altered .field:nth-child(4),
 form.comment-form.altered .field:last-child {
@@ -1563,19 +1578,19 @@ form.comment-form.altered .field:last-child {
      -webkit-animation: fadeInDown 2000ms ease-in-out;
     -moz-animation: fadeInDown 2000ms ease-in-out;
     -ms-animation: fadeInDown 2000ms ease-in-out;
-    animation: fadeInDown 2000ms ease-in-out;    
+    animation: fadeInDown 2000ms ease-in-out;
 }
 .owl-item.active  .b_faddown2 {
      -webkit-animation: fadeInDown 1000ms ease-in-out;
     -moz-animation: fadeInDown 1000ms ease-in-out;
     -ms-animation: fadeInDown 1000ms ease-in-out;
-    animation: fadeInDown 1000ms ease-in-out;    
+    animation: fadeInDown 1000ms ease-in-out;
 }
 .owl-item.active  .b_faddown3 {
      -webkit-animation: fadeInDown 800ms ease-in-out;
     -moz-animation: fadeInDown 800ms ease-in-out;
     -ms-animation: fadeInDown 800ms ease-in-out;
-    animation: fadeInDown 800ms ease-in-out;    
+    animation: fadeInDown 800ms ease-in-out;
 }
 
 
@@ -3360,7 +3375,7 @@ footer .subcribe form .field input {
 
 }
 
- 
+
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
 .slider-content.text-white h2 {
@@ -3405,7 +3420,7 @@ footer .subcribe form .field input {
 
 }
 
- 
+
 /* small mobile :320px. */
 @media (max-width: 767px) {
 .container {width:300px}
@@ -3511,9 +3526,9 @@ footer .subcribe form .field input {
 
 
 
- 
+
 }
- 
+
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container {width:450px}
@@ -3522,9 +3537,9 @@ footer .subcribe form .field input {
 }
 .mobile-menu-area {
   display: block;
-} 
- 
- 
+}
+
+
 }
 
 

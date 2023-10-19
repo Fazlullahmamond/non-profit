@@ -58,185 +58,123 @@
                 </div>
             </div>
             <div class="row features">
-                <div class="col-md-4 col-sm-6 ">
-                    <div class="feature clearfix">
-                        <div class="icon_we"><i class="fa fa-handshake-o"></i></div>
-                        <h4>Food Delivering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, maiores officia placeat
-                            incidunt aperiam</p>
-                        <a href="#" class="btn btn-min btn-secondary
+                @foreach ($categories as $category)
+                    <div class="col-md-4 col-sm-6 ">
+                        <div class="feature clearfix">
+                            <div class="img-wrapper">
+                                <div class="overlay">
+                                </div>
+                                <img class="img-responsive" src="/storage/category_images/{{ $category->image }}"
+                                    alt="{{ $category->name }}" style="height: 300px">
+                            </div>
+                            <h4 style="margin-top: 25px">{{ $category->name }}</h4>
+                            <p>{!! Str::substr($category->description, 0, 130) !!}</p>
+                            <a href="{{ route('category_details', $category->id) }}"
+                                class="btn btn-min btn-secondary
 						"><span>Learn More</span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="feature  higlight clearfix">
-                        <div class="icon_we"><i class="fa fa-medkit" aria-hidden="true"></i></div>
-                        <h4> Aids For Health </h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, maiores officia placeat
-                            incidunt aperiam</p>
-                        <a href="#" class="btn btn-min btn-secondary
-						"><span>Learn More</span></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 hidden-sm ">
-                    <div class="feature clearfix">
-                        <div class="icon_we"><i class="fa fa-book" aria-hidden="true"></i></div>
-                        <h4>Build Education</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, maiores officia placeat
-                            incidunt aperiam</p>
-                        <a href="#" class="btn btn-min btn-secondary
-						"><span>Learn More</span></a>
-                    </div>
-                </div>
-                
+                @endforeach
             </div>
         </div>
     </div>
 
 
-    <!-- Special Cuase Paralax -->
-    <div class="special-cause">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xs-12 donet__area_img">
-                    <img src="assets/img/featured-image-1.jpg" alt="" />
-                </div>
-                <div class="col-md-6 col-xs-12 donet__area">
-                    <div class="section-name parallax one">
-                        <h1>special cause Right Now</h1>
-                        <h2>Giving clean drinking water </h2>
-                        <h4>Lorem Ipsum is simply dummy text of the printing type industry. Our Ipsum has been the
-                            industry's standard dummy text ever the 1500 when unknown printer took galley homero untouched.
-                        </h4>
+    @if ($appeals->first())
+        <!-- Special Cuase Paralax -->
+        <div class="special-cause">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 donet__area_img">
+                        <img src="/storage/appeal_images/{{ $appeals->first()->image }}" alt=""
+                            style="height: 450px" />
                     </div>
-                    <div class="foundings">
-                        <div class="progress-bar-wrapper big">
-                            <div class="progress-bar-outer">
-                                <div class="clearfix">
-                                    <span class="value one">Rised: $9620</span>
-                                    <span class="value two">- To go: $10299</span>
-                                </div>
-                                <div class="progress-bar-inner">
-                                    <div class="progress-bar">
-                                        <span data-percent="75"> <span class="pretng">75%</span> </span>
+                    <div class="col-md-6 col-xs-12 donet__area">
+                        <div class="section-name parallax one">
+                            <h1>special cause Right Now</h1>
+                            <h2>{{ $appeals->first()->title }}</h2>
+                            <h4>{!! Str::substr($appeals->first()->description, 0, 300) !!}</h4>
+                        </div>
+                        <div class="foundings">
+                            <div class="progress-bar-wrapper big">
+                                <div class="progress-bar-outer">
+                                    <div class="clearfix">
+                                        <span class="value one">Rised: ${{ $appeals->first()->donated }}</span>
+                                        <span class="value two">- To go: ${{ $appeals->first()->donation_goal }}</span>
+                                    </div>
+                                    <div class="progress-bar-inner">
+                                        <div class="progress-bar">
+                                            <span
+                                                data-percent="{{ ($appeals->first()->donated / $appeals->first()->donation_goal) * 100 }}">
+                                                <span
+                                                    class="pretng">{{ ($appeals->first()->donated / $appeals->first()->donation_goal) * 100 }}%</span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="btns-wrapper">
-                        <a href="#" class="btn btn-big btn-solid "><i class="fa fa-archive"></i><span>Make
-                                Donation</span></a>
+                        <div class="btns-wrapper">
+                            <a href="#" class="btn btn-big btn-solid "><i class="fa fa-archive"></i><span>Make
+                                    Donation</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 
     <!-- Causes -->
     <div class="causes-wrapper">
         <div class="container">
             <div class="section-name one">
-                <h2>Recent Cause</h2>
+                <h2>Recent Appeals</h2>
                 <div class="short-text">
                     <h5>Your little support can bring smile of there</h5>
                 </div>
             </div>
             <div class="causes">
                 <div class="causes-list row">
-                    <div class="cause-wrapper col-md-4 col-xs-12 col-sm-6 legal health">
-                        <div class="cause content-box">
-                            <div class="img-wrapper">
-                                <div class="overlay">
+                    @foreach ($appeals as $appeal)
+                        <div class="cause-wrapper col-md-4 col-xs-12 col-sm-6 legal health">
+                            <div class="cause content-box">
+                                <div class="img-wrapper">
+                                    <div class="overlay">
+                                    </div>
+                                    <img class="img-responsive" src="/storage/appeal_images/{{ $appeals->first()->image }}"
+                                        style="height: 250px" alt="">
                                 </div>
-                                <img class="img-responsive" src="assets/img/causes/img-1.jpg" alt="">
-                            </div>
-                            <div class="info-block">
-                                <h4><a href="#">Stop Chilldern Abuse</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur deleniti
-                                    fuga ear</p>
-                                <div class="foundings">
-                                    <div class="progress-bar-wrapper min">
-                                        <div class="progress-bar-outer">
-                                            <p class="values"><span class="value one">Raised: $12500</span>-<span
-                                                    class="value two">To go: $45222</span></p>
-                                            <div class="progress-bar-inner">
-                                                <div class="progress-bar">
-                                                    <span data-percent="55"><span class="pretng">55%</span> </span>
+                                <div class="info-block">
+                                    <h4><a href="{{ route('appeal_details', $appeal->id) }}">{{ $appeal->title }}</a></h4>
+                                    <p>{!! Str::substr($appeal->description, 0, 100) !!}</p>
+                                    <div class="foundings">
+                                        <div class="progress-bar-wrapper min">
+                                            <div class="progress-bar-outer">
+                                                <p class="values">
+                                                    <span class="value one">Raised: ${{ $appeal->donated }}</span>-<span
+                                                        class="value two">To go: ${{ $appeal->donation_goal }}</span>
+                                                </p>
+                                                <div class="progress-bar-inner">
+                                                    <div class="progress-bar">
+                                                        <span
+                                                            data-percent="{{ ($appeal->donated / $appeal->donation_goal) * 100 }}">
+                                                            <span
+                                                                class="pretng">{{ ($appeal->donated / $appeal->donation_goal) * 100 }}%"><span
+                                                                    class="pretng">55%</span> </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="donet_btn">
-                                    <a href="causes-single.html" class="btn btn-min btn-solid"><i
-                                            class="fa fa-archive"></i><span>Donate Now</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cause-wrapper col-md-4 col-xs-12 col-sm-6 education poor health legal">
-                        <div class="cause content-box">
-                            <div class="img-wrapper">
-                                <div class="overlay">
-                                </div>
-                                <img class="img-responsive" src="assets/img/causes/img-2.jpg" alt="">
-                            </div>
-                            <div class="info-block">
-                                <h4><a href="#">Don't Hurt Me, Please!</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur deleniti
-                                    fuga ear</p>
-                                <div class="foundings">
-                                    <div class="progress-bar-wrapper min">
-                                        <div class="progress-bar-outer">
-                                            <p class="values"><span class="value one">Raised: $12500</span>-<span
-                                                    class="value two">To go: $45222</span></p>
-                                            <div class="progress-bar-inner">
-                                                <div class="progress-bar">
-                                                    <span data-percent="35"> <span class="pretng">35%</span></span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="donet_btn">
+                                        <a href="{{ route('appeal_details', $appeal->id) }}" class="btn btn-min btn-solid"><i
+                                                class="fa fa-archive"></i><span>Donate Now</span></a>
                                     </div>
                                 </div>
-                                <div class="donet_btn">
-                                    <a href="causes-single.html" class="btn btn-min btn-solid"><i
-                                            class="fa fa-archive"></i><span>Donate Now</span></a>
-                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="cause-wrapper col-md-4 col-xs-12 col-sm-6 ugent poor animals-wildlife hidden-sm  ">
-                        <div class="cause content-box">
-                            <div class="img-wrapper">
-                                <div class="overlay">
-                                </div>
-                                <img class="img-responsive" src="assets/img/causes/img-3.jpg" alt="">
-                            </div>
-                            <div class="info-block">
-                                <h4><a href="#">A Better Life for Disabled</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur deleniti
-                                    fuga ear</p>
-                                <div class="foundings">
-                                    <div class="progress-bar-wrapper min">
-                                        <div class="progress-bar-outer">
-                                            <p class="values"><span class="value one">Raised: $12500</span>-<span
-                                                    class="value two">To go: $45222</span></p>
-                                            <div class="progress-bar-inner">
-                                                <div class="progress-bar">
-                                                    <span data-percent="75"><span class="pretng">75%</span> </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="donet_btn">
-                                    <a href="causes-single.html" class="btn btn-min btn-solid"><i
-                                            class="fa fa-archive"></i><span>Donate Now</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -267,75 +205,28 @@
             </div>
 
             <div class="team-members row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-member">
-                        <div class="best-volunteer">
-                            <div class="voluntee-image">
-                                <a href="#" title=""><img src="assets/img/best-volunte-1.jpg"
-                                        alt=""></a>
-                            </div>
-                            <ul class="socials">
-                                <li><a href="#" title=""><i class="fa fa-twitter"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-facebook"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-youtube-play"
-                                            aria-hidden="true"></i></a></li>
+                @foreach ($volunteers as $volunteer)
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-member">
+                            <div class="best-volunteer">
+                                <div class="voluntee-image">
+                                    <a href="#" title=""><img
+                                            src="/storage/volunteer_resumes/{{ $volunteer->image }}" alt=""></a>
+                                </div>
+                                <ul class="socials">
+                                    <li><a href="#" title=""><i class="fa fa-eye"
+                                                aria-hidden="true"></i></a></li>
 
-                            </ul>
-                            <span><a href="#" title="">Cheif Director</a></span>
-                            <h2><a href="#" title="">Jonathan Greg</a></h2>
-                            <p>Lorem Jonathan Greg ipsum dolor sit amet, consectetur adipiscing elit, sed Jonathan Greg
-                                do...</p>
+                                </ul>
+                                <span><a href="#" title="">{{ $volunteer->interested_in }}</a></span>
+                                <h2><a href="#"
+                                        title="">{{ $volunteer->first_name . ' ' . $volunteer->last_name }}</a></h2>
+                                <p>{!! Str::substr($volunteer->description, 0, 90) !!}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-member">
-                        <div class="best-volunteer">
-                            <div class="voluntee-image">
-                                <a href="#" title=""><img src="assets/img/best-volunte-2.jpg"
-                                        alt=""></a>
-                            </div>
-                            <ul class="socials">
-                                <li><a href="#" title=""><i class="fa fa-twitter"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-facebook"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-youtube-play"
-                                            aria-hidden="true"></i></a></li>
+                @endforeach
 
-                            </ul>
-                            <span><a href="#" title="">Cheif Volunteer</a></span>
-                            <h2><a href="#" title="">Jennifier kalvin</a></h2>
-                            <p>Lorem Jonathan Greg ipsum dolor sit amet, consectetur adipiscing elit, sed Jonathan Greg
-                                do...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 hidden-sm">
-                    <div class="single-member">
-                        <div class="best-volunteer">
-                            <div class="voluntee-image">
-                                <a href="#" title=""><img src="assets/img/best-volunte-3.jpg"
-                                        alt=""></a>
-                            </div>
-                            <ul class="socials">
-                                <li><a href="#" title=""><i class="fa fa-twitter"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-facebook"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-youtube-play"
-                                            aria-hidden="true"></i></a></li>
-
-                            </ul>
-                            <span><a href="#" title="">Cheif Director</a></span>
-                            <h2><a href="#" title="">Mikel Willson</a></h2>
-                            <p>Lorem Jonathan Greg ipsum dolor sit amet, consectetur adipiscing elit, sed Jonathan Greg
-                                do...</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -352,7 +243,8 @@
                         <p>Nullam turpis mauris, egestas sed rutrum quis, egestas quis diam. Morbi at congue justo, a co.
                             Fusce eget ante volutpat, rutrum orci non, scelerisque enim. Fusce eget nibh ornare,
                             fringillolvenenatis eros. Nulla laoreet sagittis est, quis dapibus justo malesuada sed.</p>
-                        <a href="#" class="btn btn-big"><i class="fa fa-heartbeat"></i>Become a Volunteer</a>
+                        <a href="{{ route('become_volunteer') }}" class="btn btn-big"><i
+                                class="fa fa-heartbeat"></i>Become a Volunteer</a>
                     </div>
 
                 </div>
@@ -370,71 +262,27 @@
                     <h5>boridiatat non proident sunt in culpa qui officia</h5>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4 images-outer ">
-                    <div class="images-inner  ">
-                        <div class="nivo-activator"></div>
-                        <div class="images single-images-gl clearfix">
-                            <a href="assets/img/gallery/img-1.jpg" class="nivo-trigger"
-                                data-lightbox-gallery="gallery1"><span class="fa fa-arrows-alt"></span><img
-                                    src="assets/img/gallery/img-1.jpg" alt=""></a>
+            @foreach ($images as $image)
+                <div class="row">
+                    @foreach ($image->images as $single_image)
+                        <div class="col-sm-4 images-outer ">
+                            <div class="images-inner  ">
+                                <div class="nivo-activator"></div>
+                                <div class="images single-images-gl clearfix">
+                                    <a href="/storage/gallery_images/{{ $single_image }}" class="nivo-trigger"
+                                        data-lightbox-gallery="gallery1"><span class="fa fa-arrows-alt"></span><img
+                                            style="height: 300px; width: 100%"
+                                            src="/storage/gallery_images/{{ $single_image }}" alt=""></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 images-outer ">
-                    <div class="images-inner  ">
-                        <div class="nivo-activator"></div>
-                        <div class="images single-images-gl clearfix">
-                            <a href="assets/img/gallery/img-2.jpg" class="nivo-trigger"
-                                data-lightbox-gallery="gallery1"><span class="fa fa-arrows-alt"></span><img
-                                    src="assets/img/gallery/img-2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 images-outer ">
-                    <div class="images-inner  ">
-                        <div class="nivo-activator"></div>
-                        <div class="images single-images-gl clearfix">
-                            <a href="assets/img/gallery/img-3.jpg" class="nivo-trigger"
-                                data-lightbox-gallery="gallery1"><span class="fa fa-arrows-alt"></span><img
-                                    src="assets/img/gallery/img-3.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 images-outer ">
-                    <div class="images-inner  ">
-                        <div class="nivo-activator"></div>
-                        <div class="images single-images-gl clearfix">
-                            <a href="assets/img/gallery/img-4.jpg" class="nivo-trigger"
-                                data-lightbox-gallery="gallery1"><span class="fa fa-arrows-alt"></span><img
-                                    src="assets/img/gallery/img-4.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 images-outer ">
-                    <div class="images-inner  ">
-                        <div class="nivo-activator"></div>
-                        <div class="images single-images-gl clearfix">
-                            <a href="assets/img/gallery/img-5.jpg" class="nivo-trigger"
-                                data-lightbox-gallery="gallery1"><span class="fa fa-arrows-alt"></span><img
-                                    src="assets/img/gallery/img-5.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 images-outer ">
-                    <div class="images-inner  ">
-                        <div class="nivo-activator"></div>
-                        <div class="images single-images-gl clearfix">
-                            <a href="assets/img/gallery/img-1.jpg" class="nivo-trigger"
-                                data-lightbox-gallery="gallery1"><span class="fa fa-arrows-alt"></span><img
-                                    src="assets/img/gallery/img-1.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
 
 
 
-            </div>
+                </div>
+            @endforeach
+
         </div>
     </div>
 
@@ -448,69 +296,29 @@
                 </div>
             </div>
             <div class="row">
-                <!-- Blog Single -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="blog-box">
-                        <div class="blog-top-desc">
-                            <div class="blog-date">
-                                27 july 2017
+                @foreach ($blogs as $blog)
+                    <!-- Blog Single -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="blog-box">
+                            <div class="blog-top-desc" style="margin-bottom: 10px">
+                                <div class="blog-date">
+                                    {{ $blog->created_at->format('j M Y') }}
+                                </div>
+                                <h4>{{ $blog->title }}</h4>
+                                <strong>{!! $blog->category->name !!}</strong>
                             </div>
-                            <h4>Helping kids Grow up Stronger</h4>
-                            <i class="fa fa-user-o"></i> <strong>Admin</strong>
-                            <i class="fa fa-commenting-o"></i> <strong>12 Comments</strong>
-                        </div>
-                        <img src="assets/img/blog/img-1.jpg" alt="">
-                        <div class="blog-btm-desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque nam, necessitatibus odio
-                                dignissimos nostrum unde iure veniam.</p>
-                            <a href="#" class="btn btn-min btn-solid"> Read More <i class="fa fa-arrow-right"></i>
-                            </a>
+                            <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}"
+                                style="width: 300px; height:300px">
+                            <div class="blog-btm-desc">
+                                <p>{!! Str::substr($blog->decription, 0, 100) !!}</p>
+                                <a href="{{ route('blog_details', $blog->id) }}" class="btn btn-min btn-solid"> Read More
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Blog Single -->
-                <!-- Blog Single -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="blog-box">
-                        <div class="blog-top-desc">
-                            <div class="blog-date">
-                                20 july 2017
-                            </div>
-                            <h4>Helping kids Grow up Stronger</h4>
-                            <i class="fa fa-user-o"></i> <strong>Admin</strong>
-                            <i class="fa fa-commenting-o"></i> <strong>10 Comments</strong>
-                        </div>
-                        <img src="assets/img/blog/img-3.jpg" alt="">
-                        <div class="blog-btm-desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque nam, necessitatibus odio
-                                dignissimos nostrum unde iure veniam.</p>
-                            <a href="#" class="btn btn-min btn-solid"> Read More <i class="fa fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Blog Single -->
-                <!-- Blog Single -->
-                <div class="col-md-4 col-sm-4 hidden-sm">
-                    <div class="blog-box">
-                        <div class="blog-top-desc">
-                            <div class="blog-date">
-                                17 july 2017
-                            </div>
-                            <h4>Helping kids Grow up Stronger</h4>
-                            <i class="fa fa-user-o"></i> <strong>Admin</strong>
-                            <i class="fa fa-commenting-o"></i> <strong>8 Comments</strong>
-                        </div>
-                        <img src="assets/img/blog/img-2.jpg" alt="">
-                        <div class="blog-btm-desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque nam, necessitatibus odio
-                                dignissimos nostrum unde iure veniam.</p>
-                            <a href="#" class="btn btn-min btn-solid"> Read More <i class="fa fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Blog Single -->
+                    <!-- Blog Single -->
+                @endforeach
 
             </div>
         </div>

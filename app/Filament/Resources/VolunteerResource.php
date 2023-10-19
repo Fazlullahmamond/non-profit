@@ -16,6 +16,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -63,6 +64,8 @@ class VolunteerResource extends Resource
                                 "international development" => "International Development",
                             ])->required(),
                         FileUpload::make('resume')->disk('volunteer_resume')->openable()->downloadable()->visibility('public')->acceptedFileTypes(['application/pdf']),
+                        FileUpload::make('image')->disk('volunteer_resume')->image()->visibility('public')->required()->columnSpan('full'),
+
                         Toggle::make('status'),
                     ])
             ]);
@@ -72,6 +75,7 @@ class VolunteerResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('image')->disk('volunteer_resume')->circular(),
                 TextColumn::make('first_name')->searchable()->sortable(),
                 TextColumn::make('last_name')->searchable()->sortable(),
                 TextColumn::make('email')->searchable()->sortable(),

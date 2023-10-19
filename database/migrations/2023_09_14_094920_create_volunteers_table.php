@@ -24,6 +24,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('interested_in');
             $table->string('resume')->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
