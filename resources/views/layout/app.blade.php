@@ -13,9 +13,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/owl-carousel/assets/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/nivo-lightbox.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
@@ -40,7 +38,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo-wrap col-md-3 col-xs-6">
-                        <a href="index.html">kindness</a>
+                        <a href="index.html">Non-Profit</a>
                     </div>
                     <div class="menu-wrap col-md-8 ">
                         <ul class="menu">
@@ -58,7 +56,7 @@
                                 <a href="{{ route('about') }}">About</a>
                             </li>
                             <li class="{{ request()->routeIs('blogs') ? 'active' : '' }}">
-                                <a href="{{ route('blogs') }}">Blogs</a>
+                                <a href="{{ route('blogs') }}">Blog</a>
                             </li>
                             <li class="{{ request()->routeIs('contact') ? 'active' : '' }}">
                                 <a href="{{ route('contact') }}">Contact</a>
@@ -82,24 +80,28 @@
                                 <div class="mobile-menu">
                                     <nav id="mobile-nav">
                                         <ul>
-                                            <li><a href="index.html">Home </a></li>
-                                            <li><a href="causes-grid.html">Causes</a>
-                                                <ul class="single">
-                                                    <li><a href="causes-grid.html">Causes Grid</a></li>
-                                                    <li><a href="causes-list.html">Causes List</a></li>
-                                                    <li><a href="causes-single.html" class="active">Causes Single</a>
-                                                    </li>
-                                                </ul>
+                                            <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                                                <a href="/">Home</a>
                                             </li>
-                                            <li><a href="gallery.html"> gallery </a></li>
-                                            <li><a href="about-us.html"> About </a></li>
-                                            <li><a href="blog-list.html">Blog</a>
-                                                <ul>
-                                                    <li><a href="blog-list.html">Blog List</a></li>
-                                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                                </ul>
+                                            <li
+                                                class="{{ request()->route('appeals') || request()->route('appeal_details') ? 'active' : '' }}">
+                                                <a href="{{ route('appeals') }}">Appeals</a>
                                             </li>
-                                            <li><a href="contact-us.html">Contact</a></li>
+
+                                            <li
+                                                class="{{ request()->routeIs('our_works') || request()->routeIs('work_details') ? 'active' : '' }}">
+                                                <a href="{{ route('our_works') }}">Our Works</a>
+                                            </li>
+                                            <li class="{{ request()->routeIs('about') ? 'active' : '' }}">
+                                                <a href="{{ route('about') }}">About</a>
+                                            </li>
+                                            <li
+                                                class="{{ request()->routeIs('blogs') || request()->routeIs('blog_details') ? 'active' : '' }}">
+                                                <a href="{{ route('blogs') }}">Blogs</a>
+                                            </li>
+                                            <li class="{{ request()->routeIs('contact') ? 'active' : '' }}">
+                                                <a href="{{ route('contact') }}">Contact Us</a>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -123,7 +125,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="about widget clearfix">
                         <div class="logo-wrap">
-                            <a href="index.html">kindness</a>
+                            <a href="index.html">Non-Profit</a>
                         </div>
                         <p>At vero eos et accusamus et iusto odio dignis
                             simos ducimus qui blanditiis praesentiumlo
@@ -142,32 +144,29 @@
                     <div class="quick-links widget clearfix">
                         <h4 class="title">Quick Links</h4>
                         <div class="links">
-                            <a href="#"><i class="fa fa-angle-double-right"></i>About Us</a>
-                            <a href="#"><i class="fa fa-angle-double-right"></i>Forum</a>
-                            <a href="#"><i class="fa fa-angle-double-right"></i>Terms and Conditions</a>
-                            <a href="#"><i class="fa fa-angle-double-right"></i>Privacy Policy</a>
-                            <a href="#"><i class="fa fa-angle-double-right"></i>Blog</a>
-                            <a href="#"><i class="fa fa-angle-double-right"></i>Campains</a>
+                            <a href="{{ route('about') }}"><i class="fa fa-angle-double-right"></i>About Us</a>
+                            <a href="{{ route('our_works') }}"><i class="fa fa-angle-double-right"></i>Our Work</a>
+                            <a href="{{ route('contact') }}"><i class="fa fa-angle-double-right"></i>Contact Us</a>
+                            <a href="{{ route('blogs') }}"><i class="fa fa-angle-double-right"></i>Blog</a>
+                            <a href="{{ route('appeals') }}"><i class="fa fa-angle-double-right"></i>Appeals</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 ">
-                    <div class="tags-outer widget clearfix">
-                        <h4 class="title">Tags</h4>
-                        <div class="tags">
-                            <a href="#"><span>Cause</span></a>
-                            <a href="#"><span>Lipsum</span></a>
-                            <a href="#"><span>Donation</span></a>
-                            <a href="#"><span>Charitable</span></a>
-                            <a href="#"><span>Homeless</span></a>
-                            <a href="#"><span>Blog</span></a>
-                            <a href="#"><span>Minimal</span></a>
-                            <a href="#"><span>Health</span></a>
-                            <a href="#"><span>Education</span></a>
-                            <a href="#"><span>LifStyle</span></a>
+
+                <div class="col-md-2 col-sm-6 ">
+                    <div class="quick-links widget clearfix">
+                        <h4 class="title">Quick Links</h4>
+                        <div class="links">
+                            <a href="{{ route('become_volunteer') }}"><i class="fa fa-angle-double-right"></i>Become
+                                Volunteer</a>
+                            <a href="{{ route('terms_and_conditions') }}"><i
+                                    class="fa fa-angle-double-right"></i>Terms and Conditions</a>
+                            <a href="{{ route('privacy_policy') }}"><i class="fa fa-angle-double-right"></i>Privacy
+                                Policy</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4 col-sm-6">
                     <div class="subcribe widget clearfix">
                         <h4 class="title">Subscribe</h4>
@@ -187,7 +186,7 @@
         </div>
         <div class="footer-bar">
             <div class="container">
-                <h5>Copyright ©2017 Kindness. All Rights Reserved</h5>
+                <h5>Copyright ©2017 Non-Profit. All Rights Reserved</h5>
             </div>
         </div>
     </footer>

@@ -1,8 +1,4 @@
 
-/*
-Template name : Kindness - Nonprofit, Crowdfunding & Charity HTML5 Template
-Author : LegendTheme
-*/
 
 /* ==== Table of contents ====
 	0.0 - General Styles
@@ -119,7 +115,7 @@ p {
   transition: all 0.2s ease-in;
 }
 .btn.btn-secondary {
-  background: #0aaaa0;
+  background: #cb8108;
   color: #ffffff;
   overflow: hidden;
 }
@@ -129,7 +125,7 @@ p {
 }
 .btn.btn-solid {
   position: relative;
-  background: #0aaaa0;
+  background: #cb8108;
   color: #ffffff;
   overflow: hidden;
 }
@@ -201,7 +197,7 @@ header {
   width: 55px;
   background: none;
   cursor: pointer;
-  color: #0aaaa0;
+  color: #cb8108;
 }
 #search-bar.on {
   display: block;
@@ -282,7 +278,7 @@ header {
   top: 50%;
   height: 1px;
   width: 22px;
-  background: #0aaaa0;
+  background: #cb8108;
   z-index: 1;
 }
 .section-name .short-text .sep.l {
@@ -327,7 +323,7 @@ header {
   left: 0;
   top: 0;
   border-radius: 25px;
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .progress-bar-wrapper .progress-bar-outer .procent {
   opacity: 0;
@@ -343,7 +339,7 @@ header {
   font-weight: 700;
   font-size: 12px;
   color: #fff;
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .progress-bar-wrapper .progress-bar-outer .procent:after {
   content: "";
@@ -356,7 +352,7 @@ header {
   border-top-right-radius: 1px;
   border-left: 0px solid transparent;
   border-right: 14px solid transparent;
-  border-top: 9px solid #0aaaa0;
+  border-top: 9px solid #cb8108;
 }
 .progress-bar-wrapper:hover .progress-bar-outer .procent {
   opacity: 1;
@@ -379,13 +375,13 @@ header {
 }
 .progress-bar-wrapper.big .progress-bar-outer .progress-bar-inner .full-bar {
   height: 10px;
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .progress-bar-wrapper.min .progress-bar-outer .value {
   font-size: 16px;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  color: #0aaaa0;
+  color: #cb8108;
   padding-right: 5px;
 }
 .progress-bar-wrapper.min .progress-bar-outer .value.two {
@@ -401,7 +397,7 @@ header {
 }
 .progress-bar-wrapper.min .progress-bar-outer .progress-bar-inner .full-bar {
   height: 6px;
-  background: #0aaaa0;
+  background: #cb8108;
 }
 /*Content box */
 .content-box {
@@ -644,7 +640,7 @@ header {
     width: 100%;
 }
 .best-volunteer .socials li a {
-  background: #0aaaa0 none repeat scroll 0 0;
+  background: #cb8108 none repeat scroll 0 0;
   border-radius: 5px;
   color: #fff;
   display: inline-block;
@@ -668,10 +664,10 @@ header {
   transition: all 0.3s ease 0s;
 }
 .best-volunteer > h2 a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .best-volunteer span a {
-  color: #0aaaa0;
+  color: #cb8108;
   font-size: 15px;
   font-weight: 500;
 }
@@ -750,7 +746,7 @@ header {
   line-height: 20px;
 }
 .blog-date {
-  background: #0aaaa0 none repeat scroll 0 0;
+  background: #cb8108 none repeat scroll 0 0;
   color: #fff;
   display: inline-block;
   float: left;
@@ -846,7 +842,7 @@ header {
 }
 .pagination li a.active,
 .pagination li span.active {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 @media screen and (max-width: 500px) {
   .pagination {
@@ -995,7 +991,7 @@ form.comment-form.altered .field:last-child {
   top: -1px;
   width: 75px;
   height: 3px;
-  background: #0aaaa0;
+  background: #cb8108;
 }
 /* Donation Form */
 .donation-form .field {
@@ -1071,7 +1067,7 @@ form.comment-form.altered .field:last-child {
   left: 3px;
 }
 .donation-form .field input[type="radio"]:checked + label > span:after {
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .donation-form .field button {
   float: none !important;
@@ -1139,7 +1135,7 @@ form.comment-form.altered .field:last-child {
 .gallery-wrapper .image.two span i {
   width: 35px;
   height: 35px;
-  background: #0aaaa0;
+  background: #cb8108;
   text-align: center;
   margin-left: -17.5px;
   line-height: 35px;
@@ -1181,11 +1177,11 @@ form.comment-form.altered .field:last-child {
 }
 .short-stats h5 i {
   margin-right: 5px;
-  color: #0aaaa0;
+  color: #cb8108;
 }
 /* 	2.0  - Navigation */
 .logo-wrap > a {
-  color: #0aaaa0;
+  color: #cb8108;
   display: block;
   font-family: raleway;
   font-size: 32px;
@@ -1234,13 +1230,13 @@ form.comment-form.altered .field:last-child {
 }
 .navigation .menu-wrap .menu > li a:hover,
 .navigation .menu-wrap .menu > li span:hover {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 
 .navigation .menu-wrap .menu > li.active a,
 .navigation .menu-wrap .menu > li.active span {
   padding-bottom: 0;
-  color: #0aaaa0;
+  color: #cb8108;
   z-index: 5;
 }
 .navigation .menu-wrap .menu > li .submenu {
@@ -1251,7 +1247,7 @@ form.comment-form.altered .field:last-child {
   position: absolute;
   top: 50px;
   width: 245px;
-  border-top: 2px solid #0aaaa0;
+  border-top: 2px solid #cb8108;
 }
 .navigation .menu-wrap .menu > li .submenu li a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -1262,11 +1258,11 @@ form.comment-form.altered .field:last-child {
   text-transform: capitalize;
 }
 .navigation .menu-wrap .menu > li .submenu li a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
   padding-left: 16px;
 }
 .navigation #search-toggle, .navigation #menu-toggle {
-  background: #0aaaa0 none repeat scroll 0 0;
+  background: #cb8108 none repeat scroll 0 0;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
@@ -1407,8 +1403,8 @@ form.comment-form.altered .field:last-child {
   margin-bottom: 34px;
 }
 .slider_button a {
-    background: #0aaaa0 none repeat scroll 0 0;
-    border: 1px solid #0aaaa0;
+    background: #cb8108 none repeat scroll 0 0;
+    border: 1px solid #cb8108;
     color: #fff;
     display: inline-block;
     font-weight: 600;
@@ -1550,7 +1546,7 @@ form.comment-form.altered .field:last-child {
     width: 15px;
 }
 .slider-active .owl-dots .owl-dot.active span, .slider-active .owl-dots .owl-dot:hover span {
-    background: #0aaaa0 none repeat scroll 0 0;
+    background: #cb8108 none repeat scroll 0 0;
 }
 .slider-3 .slider-content.text-white.black-bg-opacity > h2 {
     color: #fff;
@@ -1651,7 +1647,7 @@ form.comment-form.altered .field:last-child {
 }
 
 .features-wrapper.one .features .feature:hover h4 {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .features-wrapper.one .features .feature:hover .btn {
   visibility: visible;
@@ -1777,7 +1773,7 @@ form.comment-form.altered .field:last-child {
 }
 
 .progress-bar > span {
-  background: #0aaaa0 none repeat scroll 0 0;
+  background: #cb8108 none repeat scroll 0 0;
   border-radius: 25px;
   display: block;
   height: 100%;
@@ -1847,7 +1843,7 @@ form.comment-form.altered .field:last-child {
 }
 .causes-wrapper .causes-filter li.selected,
 .causes-wrapper .causes-filter li:hover {
-  background: #0aaaa0;
+  background: #cb8108;
   color: #fff;
   transition: all 0.5s ease;
 }
@@ -1970,7 +1966,7 @@ form.comment-form.altered .field:last-child {
   font-weight: 900;
 }
 .volunteers-wrapper .info-block h2 span {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .volunteers-wrapper .info-block p {
   color: #4a4a4a;
@@ -1992,7 +1988,7 @@ form.comment-form.altered .field:last-child {
 }
 /* 9.0 - CountDown */
 .countdown-wrapper {
-  background: #0aaaa0;
+  background: #cb8108;
   padding: 35px 0;
   text-transform: uppercase;
   color: #fff;
@@ -2117,7 +2113,7 @@ form.comment-form.altered .field:last-child {
   width: 75px;
   height: 75px;
   text-align: center;
-  background: #0aaaa0;
+  background: #cb8108;
   color: #fff;
   line-height: 75px;
 }
@@ -2155,7 +2151,7 @@ form.comment-form.altered .field:last-child {
   margin-right: 5px;
 }
 .blog-post-wrapper .blog-post:hover .info-block h4 {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .blog-post-wrapper .btns-wrapper {
   margin-top: 35px;
@@ -2229,7 +2225,7 @@ footer .about .social-media-icons a span {
 }
 footer .about .social-media-icons a:hover {
   background: #fff;
-  color: #0aaaa0;
+  color: #cb8108;
   width: 85px;
 }
 footer .about .social-media-icons a:hover span {
@@ -2251,7 +2247,7 @@ footer .quick-links .links a i {
   margin-right: 5px;
 }
 footer .quick-links .links a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
   margin-left: 5px;
 }
 footer .tags-outer .tags a {
@@ -2273,7 +2269,7 @@ footer .tags-outer .tags a span {
   z-index: 10;
 }
 footer .tags-outer .tags a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
   background:#fff;
 }
 footer .tags-outer .tags a:hover:after {
@@ -2294,7 +2290,7 @@ footer .subcribe form .field input {
 }
 footer .subcribe form .field button:hover {
   background: #fff none repeat scroll 0 0;
-  color: #0aaaa0;
+  color: #cb8108;
 }
 footer .subcribe form .field button {
   height: 45px;
@@ -2315,7 +2311,7 @@ footer .footer-bar h5 {
 }
 footer .footer-bar h5 i,
 footer .footer-bar h5 a {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 @media screen and (max-width: 991px) {
   footer {
@@ -2353,14 +2349,14 @@ footer .footer-bar h5 a {
 }
 .blog-page-wrapper .blog-posts .blog-post .meta h5 i {
   margin-right: 5px;
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .blog-page-wrapper .blog-posts .blog-post .meta h5 a {
   color: rgba(0, 0, 0, 0.55);
   transition: all .3s ease;
 }
 .blog-page-wrapper .blog-posts .blog-post .meta h5 a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .blog-page-wrapper .blog-posts .blog-post .meta h5:first-child {
   margin-left: 0;
@@ -2417,7 +2413,7 @@ footer .footer-bar h5 a {
 }
 .blog-page-wrapper .blog-posts .blog-post #post-slider .owl-dots .owl-dot:hover,
 .blog-page-wrapper .blog-posts .blog-post #post-slider .owl-dots .owl-dot.active {
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .blog-page-wrapper .blog-posts .pagination {
   margin-top: 30px;
@@ -2480,7 +2476,7 @@ footer .footer-bar h5 a {
   float: right;
 }
 .blog-page-wrapper .sidebar .categories a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .blog-page-wrapper .sidebar .recent-posts {
   margin-top: 15px;
@@ -2514,7 +2510,7 @@ footer .footer-bar h5 a {
   display: inline-block;
   width: 35px;
   height: 35px;
-  background: #0aaaa0;
+  background: #cb8108;
   text-align: center;
   line-height: 35px;
   color: #ffffff;
@@ -2546,7 +2542,7 @@ footer .footer-bar h5 a {
   color: #e5e5e5;
 }
 .blog-page-wrapper .sidebar .recent-posts .post:hover h4 {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .blog-page-wrapper .sidebar .recent-posts .post:hover .image-wrapper .mask {
   opacity: 1;
@@ -2597,13 +2593,13 @@ footer .footer-bar h5 a {
 .blog-page-wrapper .blog-posts .blog-post.single-post blockquote {
   width: 100%;
   background: #fafafa;
-  border-left: 2px solid #0aaaa0;
+  border-left: 2px solid #cb8108;
   padding: 35px 55px;
   text-align: center;
 }
 .blog-page-wrapper .blog-posts .blog-post.single-post blockquote i {
   font-size: 24px;
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .blog-page-wrapper .blog-posts .blog-post.single-post blockquote p {
   color: rgba(0, 0, 0, 0.55);
@@ -2648,7 +2644,7 @@ footer .footer-bar h5 a {
 }
 .blog-page-wrapper .blog-posts .single-post-footer .tags a:hover {
   color: #fff;
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .blog-page-wrapper .blog-posts .single-post-footer .author {
   margin-top: 55px;
@@ -2683,7 +2679,7 @@ footer .footer-bar h5 a {
   margin-left: 0;
 }
 .blog-page-wrapper .blog-posts .single-post-footer .author .social-media a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .blog-page-wrapper .blog-posts .single-post-footer .comment-form-wrapper {
   margin-top: 65px;
@@ -2706,7 +2702,7 @@ footer .footer-bar h5 a {
 .causes-page-wrapper .top-bar {
   padding: 15px 0;
   margin: 0 0px;
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .causes-page-wrapper .top-bar h4 {
   font-family: 'Lato', sans-serif;
@@ -2756,7 +2752,7 @@ footer .footer-bar h5 a {
 }
 .causes-page-wrapper .top-bar .filter ul li:hover,
 .causes-page-wrapper .top-bar .filter ul li.selected {
-  background: #0aaaa0;
+  background: #cb8108;
   color: #Fff;
 }
 .causes-page-wrapper .top-bar .filter ul.on {
@@ -2955,8 +2951,8 @@ footer .footer-bar h5 a {
   margin: 0 5px;
 }
 .causes-page-wrapper.single-cause .donation-wrapper .tabs-switcher li.active a {
-  border-bottom: 2px solid #0aaaa0;
-  color: #0aaaa0;
+  border-bottom: 2px solid #cb8108;
+  color: #cb8108;
 }
 .causes-page-wrapper.single-cause .donation-wrapper .tab-content {
   margin-top: 25px;
@@ -3004,7 +3000,7 @@ footer .footer-bar h5 a {
   float: left;
   width: 35px;
   height: 35px;
-  background: #0aaaa0;
+  background: #cb8108;
   text-align: center;
   margin: 0 5px;
   line-height: 35px;
@@ -3070,7 +3066,7 @@ footer .footer-bar h5 a {
 }
 .about-page-wrapper .partners #partners-slider .owl-dots .owl-dot:hover,
 .about-page-wrapper .partners #partners-slider .owl-dots .owl-dot.active {
-  background: #0aaaa0;
+  background: #cb8108;
 }
 .mean-container .mean-nav ul li a {
   font-family: raleway;
@@ -3118,7 +3114,7 @@ footer .footer-bar h5 a {
   font-size: 16px;
 }
 .contact-page-wrapper .widget:hover i {
-  color: #0aaaa0;
+  color: #cb8108;
   transform: scale(1.2);
 }
 .contact-page-wrapper .comment-form-wrapper {
@@ -3137,7 +3133,7 @@ footer .footer-bar h5 a {
   transition: all 0.3s ease 0s;
 }
 .content-box .info-block h4 a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .pagination-wrapper {
   margin-top: 20px;
@@ -3154,7 +3150,7 @@ footer .footer-bar h5 a {
   transition: all 0.3s ease 0s;
 }
 .pagination li a:hover {
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .progress-bar > span {
   position: relative;
@@ -3255,7 +3251,7 @@ footer .footer-bar h5 a {
   width: 100%;
 }
 a#scrollUp {
-  background: #0aaaa0 none repeat scroll 0 0;
+  background: #cb8108 none repeat scroll 0 0;
   bottom: 54px;
   color: #fff;
   font-size: 23px;
@@ -3308,7 +3304,7 @@ a#scrollUp:hover {
   display: none;
 }
 .mean-container a.meanmenu-reveal span {
-  background: #0aaaa0 none repeat scroll 0 0;
+  background: #cb8108 none repeat scroll 0 0;
   display: block;
   height: 3px;
   margin-top: 5px;
@@ -3319,7 +3315,7 @@ a#scrollUp:hover {
   margin-top: -82px;
 }
 .mean-container a.meanmenu-reveal {
-  color: #0aaaa0;
+  color: #cb8108;
   height: 22px;
   width: 29px;
 }
@@ -3342,7 +3338,7 @@ a#scrollUp:hover {
 }
 .mean-container .mean-nav ul li a:hover {
   background: #f8f8f8 none repeat scroll 0 0;
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .mean-container .mean-nav ul li a.mean-expand {
   background: #fff none repeat scroll 0 0;
@@ -3352,7 +3348,7 @@ a#scrollUp:hover {
 }
 .mean-container .mean-nav ul li a:hover {
   background: #fff none repeat scroll 0 0;
-  color: #0aaaa0;
+  color: #cb8108;
 }
 .volunteers-wrapper .images-outer {
   margin-top: 0;

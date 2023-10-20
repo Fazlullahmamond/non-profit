@@ -98,8 +98,9 @@
                                     </div>
 
                                 @empty
-                                    No other blogs
+                                No other blogs
                                 @endforelse
+
                             </div>
                         </div>
 

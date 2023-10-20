@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Gallery;
 use App\Models\Volunteer;
+use App\Models\Work;
 use Illuminate\Http\Request;
 
 class FrontPageController extends Controller
@@ -107,16 +108,50 @@ class FrontPageController extends Controller
 
     public function blogs()
     {
-        $blogs = Blog::where('status',1 )->get();
-        return view('blog.blogs', compact(['blogs']));
+        $blogs = Blog::where('status', 1)->paginate(6);
+        $categories = Category::withCount('blogs')->get();
+        $latestBlogs = Blog::where('status', 1)->latest()->limit(3)->get();
+        return view('blog.blogs', compact(['blogs', 'categories', 'latestBlogs']));
     }
 
 
     public function blog_details($id)
     {
-        $blog = Appeal::findOrFail($id);
-        return view('blog.blog_details', compact(['blog']));
+        $blog = Blog::findOrFail($id);
+        $categories = Category::withCount('blogs')->get();
+        $latestBlogs = Blog::where('status', 1)->latest()->limit(3)->get();
+        return view('blog.blog_details', compact(['blog', 'categories', 'latestBlogs']));
+    }
+
+    public function category_blogs($id)
+    {
+        $blogs = Blog::where('category_id', $id)->paginate(6);
+        $categories = Category::withCount('blogs')->get();
+        $latestBlogs = Blog::where('status', 1)->where('category_id', $id)->latest()->limit(3)->get();
+        return view('blog.category_blogs', compact(['blogs', 'categories', 'latestBlogs']));
     }
 
 
+    public function our_works()
+    {
+        $works = Work::where('status', 1)->paginate(5);
+        return view('work.works', compact(['works']));
+    }
+
+
+    public function work_details($id)
+    {
+        $work = Work::findOrFail($id);
+        return view('work.work_details', compact(['work']));
+    }
+
+
+
+    public function terms_and_conditions(){
+        return view('extra.terms_and_conditions');
+    }
+
+    public function privacy_policy(){
+        return view('extra.privacy_policy');
+    }
 }

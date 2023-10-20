@@ -34,10 +34,14 @@ Route::get('/about', [FrontPageController::class, 'about'])->name('about');
 
 Route::get('/blogs', [FrontPageController::class, 'blogs'])->name('blogs');
 Route::get('/blog/{id}/details', [FrontPageController::class, 'blog_details'])->name('blog_details');
+Route::get('/blog/{id}/category/blogs', [FrontPageController::class, 'category_blogs'])->name('category_blogs');
+
 
 Route::get('/our_works', [FrontPageController::class, 'our_works'])->name('our_works');
-Route::get('/our_work/{id}/details', [FrontPageController::class, 'our_work_details'])->name('our_work_details');
+Route::get('/our_work/{id}/details', [FrontPageController::class, 'work_details'])->name('work_details');
 
+Route::get('/terms_and_conditions', [FrontPageController::class, 'terms_and_conditions'])->name('terms_and_conditions');
+Route::get('/privacy_policy', [FrontPageController::class, 'privacy_policy'])->name('privacy_policy');
 
 
 
