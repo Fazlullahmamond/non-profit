@@ -18,7 +18,7 @@ class FrontPageController extends Controller
 
         $categories = Category::all();
         $appeals = Appeal::where('status', 1)->latest()->get();
-        $volunteers = Volunteer::where('status', 1)->latest()->get();
+        $volunteers = Volunteer::where('status', 1)->latest()->limit(6)->get();
         $images = Gallery::all();
         $blogs = Blog::where('status', 1)->latest()->limit(3)->get();
         return view('welcome', compact(['categories', 'appeals', 'volunteers', 'images', 'blogs']));
@@ -34,7 +34,9 @@ class FrontPageController extends Controller
 
     public function about()
     {
-        return view('about');
+        $volunteers = Volunteer::where('status', 1)->latest()->get();
+
+        return view('about', compact(['volunteers']));
     }
 
     public function save_contact(Request $request)
@@ -106,12 +108,23 @@ class FrontPageController extends Controller
 
 
 
-    public function blogs()
+    public function blogs(Request $request)
     {
-        $blogs = Blog::where('status', 1)->paginate(6);
         $categories = Category::withCount('blogs')->get();
         $latestBlogs = Blog::where('status', 1)->latest()->limit(3)->get();
-        return view('blog.blogs', compact(['blogs', 'categories', 'latestBlogs']));
+
+        $search = $request->input('search');
+        $blogs = Blog::query();
+
+        if (!empty($search)) {
+            $blogs->where(function ($query) use ($search) {
+                $query->where('title', 'like', "%$search%")
+                    ->orWhere('description', 'like', "%$search%");
+            });
+        }
+
+        $blogs = $blogs->where('status', 1)->paginate(6);
+        return view('blog.blogs', compact(['blogs', 'categories', 'latestBlogs', 'search']));
     }
 
 
@@ -147,11 +160,13 @@ class FrontPageController extends Controller
 
 
 
-    public function terms_and_conditions(){
+    public function terms_and_conditions()
+    {
         return view('extra.terms_and_conditions');
     }
 
-    public function privacy_policy(){
+    public function privacy_policy()
+    {
         return view('extra.privacy_policy');
     }
 }

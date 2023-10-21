@@ -8,10 +8,9 @@
                 style="background-image: url(assets/img/slides/s1.jpg);">
                 <div class="container">
                     <div class="slider-content text-white">
-                        <h2 class="b_faddown1 cd-headline clip is-full-width">KINDNESS &amp; HUMANITY </h2>
-                        <p class="b_faddown2">Lorem ipsum dolor sit amet consecte tur adipiscing titor sit amet consecte tur
-                            adipiscing titor
-                            <br />a accumsan justo laoreetsit amet consecte tur adipiscing titor
+                        <h2 class="b_faddown1 cd-headline clip is-full-width">Clean Water for All</h2>
+                        <p class="b_faddown2">We're on a mission to provide clean and safe drinking water to underserved
+                            communities, <br>ensuring every drop counts towards a healthier, more equitable world.
                         </p>
                         <div class="slider_button b_faddown3"><a href="#">Donate Now</a></div>
                     </div>
@@ -21,10 +20,9 @@
                 style="background-image: url(assets/img/slides/s2.jpg);">
                 <div class="container">
                     <div class="slider-content text-white">
-                        <h2 class="b_faddown1 cd-headline clip is-full-width">KINDNESS &amp; HUMANITY </h2>
-                        <p class="b_faddown2">Lorem ipsum dolor sit amet consecte tur adipiscing titor sit amet consecte tur
-                            adipiscing titor
-                            <br />a accumsan justo laoreetsit amet consecte tur adipiscing titor
+                        <h2 class="b_faddown1 cd-headline clip is-full-width">A Hand for the Underprivileged </h2>
+                        <p class="b_faddown2">We lend a helping hand to those in need, working to alleviate poverty and
+                            improve lives <br> through compassionate support and essential resources.
                         </p>
                         <div class="slider_button b_faddown3"><a href="#">Donate Now</a></div>
                     </div>
@@ -35,10 +33,9 @@
                 style="background-image: url(assets/img/slides/s3.jpg);">
                 <div class="container">
                     <div class="slider-content text-white">
-                        <h2 class="b_faddown1 cd-headline clip is-full-width">KINDNESS &amp; HUMANITY </h2>
-                        <p class="b_faddown2">Lorem ipsum dolor sit amet consecte tur adipiscing titor sit amet consecte tur
-                            adipiscing titor
-                            <br />a accumsan justo laoreetsit amet consecte tur adipiscing titor
+                        <h2 class="b_faddown1 cd-headline clip is-full-width">Fighting Climate Change Together </h2>
+                        <p class="b_faddown2">Join us in the fight against climate change as we strive to create a more
+                            sustainable planet <br> through collective action and eco-friendly practices.
                         </p>
                         <div class="slider_button b_faddown3"><a href="#">Donate Now</a></div>
                     </div>
@@ -91,7 +88,7 @@
                     </div>
                     <div class="col-md-6 col-xs-12 donet__area">
                         <div class="section-name parallax one">
-                            <h1>special cause Right Now</h1>
+                            <h1>special appeal Right Now</h1>
                             <h2>{{ $appeals->first()->title }}</h2>
                             <h4>{!! Str::substr($appeals->first()->description, 0, 300) !!}</h4>
                         </div>
@@ -167,8 +164,9 @@
                                         </div>
                                     </div>
                                     <div class="donet_btn">
-                                        <a href="{{ route('appeal_details', $appeal->id) }}" class="btn btn-min btn-solid"><i
-                                                class="fa fa-archive"></i><span>Donate Now</span></a>
+                                        <a href="{{ route('appeal_details', $appeal->id) }}"
+                                            class="btn btn-min btn-solid"><i class="fa fa-archive"></i><span>Donate
+                                                Now</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -213,12 +211,12 @@
                                     <a href="#" title=""><img
                                             src="/storage/volunteer_resumes/{{ $volunteer->image }}" alt=""></a>
                                 </div>
-                                <ul class="socials">
-                                    <li><a href="#" title=""><i class="fa fa-eye"
-                                                aria-hidden="true"></i></a></li>
 
-                                </ul>
-                                <span><a href="#" title="">{{ $volunteer->interested_in }}</a></span>
+                                <span
+                                    style="
+                                margin-top: 10px;
+                            "><a
+                                        href="#" title="">{{ $volunteer->interested_in }}</a></span>
                                 <h2><a href="#"
                                         title="">{{ $volunteer->first_name . ' ' . $volunteer->last_name }}</a></h2>
                                 <p>{!! Str::substr($volunteer->description, 0, 90) !!}</p>
@@ -240,9 +238,12 @@
                 <div class="col-sm-12">
                     <div class="weneed-volunt info-block">
                         <h2>We Need Volunteers</h2>
-                        <p>Nullam turpis mauris, egestas sed rutrum quis, egestas quis diam. Morbi at congue justo, a co.
-                            Fusce eget ante volutpat, rutrum orci non, scelerisque enim. Fusce eget nibh ornare,
-                            fringillolvenenatis eros. Nulla laoreet sagittis est, quis dapibus justo malesuada sed.</p>
+                        ><p>Our mission relies on dedicated individuals like you. Join our passionate team of volunteers
+                            and<br>
+                            make a meaningful impact. Whether you're passionate about clean water, aiding the<br>
+                            underprivileged, or fighting climate change, your time and skills can help us create
+                            positive<br>
+                            change. Together, we can build a better world.</p>
                         <a href="{{ route('become_volunteer') }}" class="btn btn-big"><i
                                 class="fa fa-heartbeat"></i>Become a Volunteer</a>
                     </div>
@@ -257,9 +258,9 @@
     <div class="volunteers-wrapper images-gallery-wrapper">
         <div class="container">
             <div class="section-name one">
-                <h2>Causes Gallery</h2>
+                <h2>Gallery</h2>
                 <div class="short-text">
-                    <h5>boridiatat non proident sunt in culpa qui officia</h5>
+                    <h5>A glimpse of our impact in images. Witness the transformation.</h5>
                 </div>
             </div>
             @foreach ($images as $image)
@@ -292,7 +293,8 @@
             <div class="section-name one">
                 <h2>Recent News</h2>
                 <div class="short-text">
-                    <h5>boridiatat non proident sunt in culpa qui officia</h5>
+                    <h5>Stay updated with our latest stories and developments. Discover how we're making a difference in
+                        real time.</h5>
                 </div>
             </div>
             <div class="row">
@@ -305,6 +307,7 @@
                                     {{ $blog->created_at->format('j M Y') }}
                                 </div>
                                 <h4>{{ $blog->title }}</h4>
+                                <i class="fa fa-folder"></i></i>
                                 <strong>{!! $blog->category->name !!}</strong>
                             </div>
                             <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}"

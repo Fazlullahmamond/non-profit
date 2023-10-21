@@ -27,7 +27,7 @@
         <div id="search-bar">
             <div class="container">
                 <div class="row">
-                    <form action="#" name="search" class="col-xs-12">
+                    <form  action="{{ route('blogs') }}" method="GET" name="search" class="col-xs-12">
                         <input type="text" name="search" placeholder="Type and Hit Enter"><i id="search-close"
                             class="fa fa-close"></i>
                     </form>
@@ -122,14 +122,12 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="about widget clearfix">
                         <div class="logo-wrap">
                             <a href="index.html">Non-Profit</a>
                         </div>
-                        <p>At vero eos et accusamus et iusto odio dignis
-                            simos ducimus qui blanditiis praesentiumlo
-                            volupt </p>
+                        <p>Committed to making a positive impact, we strive to create a brighter, more equitable world for all </p>
                         <div class="social-media-icons">
                             <a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
                             <a href="#"><i class="fa fa-google-plus"></i><span>Google +</span></a>
@@ -140,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6 ">
+                <div class="col-md-3 col-sm-6 ">
                     <div class="quick-links widget clearfix">
                         <h4 class="title">Quick Links</h4>
                         <div class="links">
@@ -153,7 +151,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 ">
                     <div class="quick-links widget clearfix">
                         <h4 class="title">Quick Links</h4>
                         <div class="links">
@@ -167,21 +165,6 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                    <div class="subcribe widget clearfix">
-                        <h4 class="title">Subscribe</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate provident amet
-                            reprehenderit!</p>
-                        <form action="#">
-                            <div class="field">
-                                <input type="email" name="e-mail" placeholder="Your E-mail">
-                            </div>
-                            <div class="field">
-                                <button class="btn btn-min btn-solid"><span>Subscibe</span></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="footer-bar">

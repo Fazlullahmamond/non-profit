@@ -18,13 +18,13 @@
         <div class="container">
             <div class="row">
                 <div class="blog-posts col-md-8">
-                    @foreach ($blogs as $blog)
+                    @forelse ($blogs as $blog)
                         <div class="blog-box">
                             <div class="blog-top-desc">
                                 <div class="blog-date">
                                     {{ $blog->created_at->format('j M Y') }}
                                 </div>
-                                <h4>{{ $blog->title }}</h4>
+                                <h4><a href="{{ route('blog_details', $blog->id) }}"> {{ $blog->title }}</a></h4>
                                 <i class="fa fa-folder-o"></i> <strong>{{ $blog->category->name }}</strong>
                             </div>
                             <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}">
@@ -35,7 +35,10 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        Not Found, Try Agin
+                    @endforelse
+
 
                     <div class="pagination-wrapper">
                         {{ $blogs->links('vendor.pagination.bootstrap-4') }}
@@ -45,9 +48,10 @@
                 <div class="sidebar-wrapper col-md-4">
                     <div class="sidebar">
                         <div class="search-bar">
-                            <form action="#">
+                            <form action="{{ route('blogs') }}" method="GET">
                                 <div class="field">
-                                    <input type="text" name="search" placeholder="Type and Hit Enter">
+                                    <input type="text" name="search" placeholder="Type and Hit Enter"
+                                        value="{{ $search }}">
                                     <button><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
@@ -81,7 +85,8 @@
                                         <div class="image-wrapper">
                                             <div class="mask"><a href="{{ route('blog_details', $blog->id) }}"><i
                                                         class="fa fa-link"></i></a></div>
-                                            <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}" style="height: 70px; width: 80px;">
+                                            <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}"
+                                                style="height: 70px; width: 80px;">
 
                                         </div>
                                         <div class="info-block">
