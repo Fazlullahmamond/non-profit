@@ -38,7 +38,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo-wrap col-md-3 col-xs-6">
-                        <a href="index.html">Non-Profit</a>
+                        <a href="/">CharityAid</a>
                     </div>
                     <div class="menu-wrap col-md-8 ">
                         <ul class="menu">
@@ -125,7 +125,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="about widget clearfix">
                         <div class="logo-wrap">
-                            <a href="index.html">Non-Profit</a>
+                            <a href="/">CharityAid</a>
                         </div>
                         <p>Committed to making a positive impact, we strive to create a brighter, more equitable world for all </p>
                         <div class="social-media-icons">
@@ -169,7 +169,7 @@
         </div>
         <div class="footer-bar">
             <div class="container">
-                <h5>Copyright ©2017 Non-Profit. All Rights Reserved</h5>
+                <h5>Copyright ©2017 CharityAid. All Rights Reserved</h5>
             </div>
         </div>
     </footer>

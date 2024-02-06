@@ -104,6 +104,24 @@ return [
             'throw' => false,
         ],
 
+        'event' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/events'),
+            'url' => env('APP_URL') . '/storage/events',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'community' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/communities'),
+            'url' => env('APP_URL') . '/storage/communities',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+
+
     ],
 
     /*

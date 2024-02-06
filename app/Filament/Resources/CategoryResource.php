@@ -23,30 +23,47 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = "Services";
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-group';
+    protected static ?string $navigationGroup = 'Services';
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                Card::make()
-                    ->schema([
-                        TextInput::make('name')->required()->maxLength(100),
-                        RichEditor::make('description')->required(),
-                        FileUpload::make('image')->disk('category_image')->image()->imageEditor()->visibility('public'),
-                    ])
-            ]);
+        return $form->schema([
+            Card::make()->schema([
+                TextInput::make('name')
+                    ->required()
+                    ->maxLength(100),
+                RichEditor::make('description')->required(),
+                FileUpload::make('image')
+                    ->disk('category_image')
+                    ->image()
+                    ->imageEditor()
+                    ->visibility('public'),
+            ]),
+        ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->disk('category_image')->circular()->defaultImageUrl(url('/storage/default/default.png')),
-                TextColumn::make('name')->searchable()->label('Name'),
-                TextColumn::make('description')->label('Description')->html()->limit(100)->wrap()->default('Nothing')->searchable(),
-                TextColumn::make('blogs_count')->counts('blogs')->label('Total Blogs'),
+                ImageColumn::make('image')
+                    ->disk('category_image')
+                    ->circular()
+                    ->defaultImageUrl(url('/storage/default/default.png')),
+                TextColumn::make('name')
+                    ->searchable()
+                    ->label('Name'),
+                TextColumn::make('description')
+                    ->label('Description')
+                    ->html()
+                    ->limit(100)
+                    ->wrap()
+                    ->default('Nothing')
+                    ->searchable(),
+                TextColumn::make('blogs_count')
+                    ->counts('blogs')
+                    ->label('Total Blogs'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -55,21 +72,14 @@ class CategoryResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-            ])->defaultSort('created_at', 'desc')
+            ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ])
-            ->emptyStateActions([
-                Tables\Actions\CreateAction::make(),
-            ]);
+            ->actions([Tables\Actions\EditAction::make()])
+            ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])])
+            ->emptyStateActions([Tables\Actions\CreateAction::make()]);
     }
 
     public static function getRelations(): array
