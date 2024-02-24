@@ -24,6 +24,10 @@ class FrontPageController extends Controller
         return view('welcome', compact(['categories', 'appeals', 'volunteers', 'images', 'blogs']));
     }
 
+    public function volunteers()
+    {
+        return view('volunteer.volunteers');
+    }
 
     public function contact()
     {

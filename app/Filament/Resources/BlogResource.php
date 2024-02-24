@@ -49,10 +49,16 @@ class BlogResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->disk('blog_image')->circular()->defaultImageUrl(url('/storage/default/default.png')),
-                TextColumn::make('title')->searchable()->sortable(),
-                TextColumn::make('description')->limit(50)->html()->wrap()->searchable()->sortable(),
-                TextColumn::make('category.name')->searchable(),
+                ImageColumn::make('image')->disk('blog_image')->circular()->defaultImageUrl(url('/storage/default/default.png'))->toggleable(),
+                TextColumn::make('title')->searchable()
+                    ->toggleable()
+                    ->sortable(),
+                TextColumn::make('description')
+                    ->toggleable()
+                    ->limit(50)->html()->wrap()->searchable()->sortable(),
+                TextColumn::make('category.name')
+                    ->toggleable()
+                    ->searchable(),
                 ToggleColumn::make('status')
             ])->defaultSort('created_at', 'desc')
             ->filters([

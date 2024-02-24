@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class AppealsChart extends ChartWidget
 {
     protected static ?string $heading = 'Total Appeals';
+    protected static ?int $sort = 10;
 
     protected function getData(): array
     {

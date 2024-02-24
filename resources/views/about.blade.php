@@ -1,130 +1,212 @@
-@extends('layout.app')
+@extends('layout.front')
 @section('content')
-    <!-- Banner -->
-    <div class="page-banner">
-        <div class="container">
-            <div class="parallax-mask"></div>
-            <div class="section-name">
-                <h2>About Us</h2>
-                <div class="short-text">
-                    <h5>Home<i class="fa fa-angle-double-right"></i>About Us</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- about wrapper -->
-    <div class="about-page-wrapper">
-        <div class="description container">
-            <div class="row ">
-                <div class="col-md-6 ">
-                    <div class="image-wrapper">
-                        <img class="img-responsive" src="assets/img/featured-image-11.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6 ">
-                    <div class="about-right-text">
-                        <div class="widget-title">
-                            <h4>Hi We Provide Worldwide Charity Service Since 1978</h4>
-                        </div>
-                        <p class="first">
-                            We are a passionate and dedicated team committed to making a positive impact on the world. Our
-                            journey began with a shared vision - a vision of a better, more compassionate world. Our belief
-                            in the power of collective action drives us to work tirelessly toward this goal.
-                        </p>
-                        <p class="second">
-                            With a focus on critical issues like clean water access, poverty alleviation, and environmental
-                            conservation, we are actively involved in bringing about change. Our unwavering dedication to
-                            these causes is fueled by the belief that every small effort counts.
-                        </p>
-                        <p class="third">
-
-                            Our work goes beyond words; it's defined by action. We believe in creating real change, one
-                            project at a time. Our hands-on approach, coupled with the support of volunteers and partners,
-                            allows us to turn vision into reality.
-                        </p>
-                        <p class="third">
-
-                            Through the years, we've seen countless lives transformed, communities empowered, and the
-                            environment restored. Our success stories are a testament to the difference that passionate
-                            people can make when they come together with a common purpose.
-                        </p>
-                        <p class="third">
-
-                            As we move forward, we invite you to join us on this journey. Together, we can create a world
-                            where everyone has access to the basic necessities, where poverty is reduced, and where our
-                            environment is protected for future generations. Be a part of our story, and let's write a
-                            brighter future together.</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- team -->
-        <div class="team-wrapper">
+    <main class="main">
+        <section class="promo-primary">
+            <picture>
+                <source srcset="/front/img/about.jpg" media="(min-width: 992px)" /><img class="img--bg"
+                    src="/front/img/about.jpg" alt="img" />
+            </picture>
+            <div class="promo-primary__description"> <span>Donation</span></div>
             <div class="container">
-                <div class="section-name one">
-                    <h2>our volunteers</h2>
-                    <div class="short-text">
-                        <h5>We are all times support them for their smile</h5>
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="align-container">
+                            <div class="align-container__item"><span class="promo-primary__pre-title">Helpo</span>
+                                <h1 class="promo-primary__title"><span>About</span><br /><span>Organization</span></h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="team-members row">
-
+            </div>
+        </section>
+        <!-- about-us start-->
+        <section class="section about-us">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-xl-5">
+                        <div class="img-box">
+                            <div class="img-box__img"><img class="img--bg" src="/front/img/about_2.png" alt="img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 offset-xl-1">
+                        <div class="heading heading--primary"><span class="heading__pre-title">About Us</span>
+                            <h2 class="heading__title"><span>Help is Our</span> <span>Main Goal</span></h2>
+                        </div>
+                        <p><strong>Thresher shark rudd African lungfish silverside, Red salmon rockfish grunion, garpike
+                                zebra danio king-of-the-salmon banjo catfish."</strong></p>
+                        <p>Sea chub demoiselle whalefish zebra lionfish mud cat pelican eel. Minnow snoek icefish
+                            velvet-belly shark, California halibut round stingray northern sea robin. Southern grayling
+                            trout-perch</p>
+                        <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento
+                            splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish basslet.
+                            Buri chimaera triplespine northern sea robin zingel lancetfish galjoen fish, catla wolffish,
+                            mosshead warbonnet</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-us end-->
+        <!-- text section start-->
+        <section class="section text-section text-section--style-2 no-padding-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="text-section__heading">Our Mission</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-4 col-xl-7 offset-xl-4">
+                        <h3 class="text-section__title">We work around the globe to save lives and defeat poverty</h3>
+                        <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento
+                            splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- text section end-->
+        <!-- video block start-->
+        <section class="section video-block no-padding-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="video-frame"><img class="img--bg" src="/front/img/video_frame.png" alt="frame" /><a
+                                class="video-trigger video-frame__trigger"
+                                href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><span class="video-frame__icon"><i
+                                        class="fa fa-play" aria-hidden="true"></i></span><span
+                                    class="video-frame__text">Watch our video</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- video block end-->
+        <!-- statistics start-->
+        <section class="section statistics no-padding-top">
+            <div class="container">
+                <div class="row margin-bottom">
+                    <div class="col-12">
+                        <div class="heading heading--primary heading--center"><span class="heading__pre-title">What we
+                                Do</span>
+                            <h2 class="heading__title no-margin-bottom color--white"><span>Our</span>
+                                <span>Statistics</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row offset-margin">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="icon-item">
+                            <div class="icon-item__img"><span class="js-counter">20</span></div>
+                            <div class="icon-item__text">
+                                <p>Years of Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="icon-item">
+                            <div class="icon-item__img"><span class="js-counter">32</span></div>
+                            <div class="icon-item__text">
+                                <p>Country</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="icon-item">
+                            <div class="icon-item__img"><span class="js-counter">200 </span><span>+</span></div>
+                            <div class="icon-item__text">
+                                <p>Thousand People Helped</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="icon-item">
+                            <div class="icon-item__img"><span class="js-counter">65 </span><span>b</span></div>
+                            <div class="icon-item__text">
+                                <p>Dollars We Collected </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- statistics end-->
+        <!-- team start-->
+        <section class="section team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="heading heading--primary"><span class="heading__pre-title">Team</span>
+                            <h2 class="heading__title no-margin-bottom"><span>Meet</span> <span>our Team</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-bottom">
                     @foreach ($volunteers as $volunteer)
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="single-member">
-                                <div class="best-volunteer">
-                                    <div class="voluntee-image">
-                                        <a href="#" title=""><img
-                                                src="/storage/volunteer_resumes/{{ $volunteer->image }}" alt=""></a>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <!-- iteam start-->
+                            <div class="team-item team-item--rounded">
+                                <div class="team-item__img-holder">
+                                    <div class="team-item__img"><img class="img--bg"
+                                            src="/storage/volunteer_resumes/{{ $volunteer->image }}"
+                                            alt="{{ $volunteer->first_name . ' ' . $volunteer->last_name }}" /></div>
+                                </div>
+                                <div class="team-item__description">
+                                    <div class="team-item__name">{{ $volunteer->first_name . ' ' . $volunteer->last_name }}
                                     </div>
-
-                                    <span
-                                        style="
-                                    margin-top: 10px;
-                                "><a
-                                            href="#" title="">{{ $volunteer->interested_in }}</a></span>
-                                    <h2><a href="#"
-                                            title="">{{ $volunteer->first_name . ' ' . $volunteer->last_name }}</a>
-                                    </h2>
-                                    <p>{!! Str::substr($volunteer->description, 0, 90) !!}</p>
+                                    <div class="team-item__position">{{ $volunteer->interested_in }}</div>
+                                </div>
+                            </div>
+                            <!-- iteam end-->
+                        </div>
+                    @endforeach
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center"><a class="button button--blue"
+                            href="{{ route('become_volunteer') }}">Become our
+                            volunteer</a></div>
+                </div>
+            </div>
+        </section>
+        <!-- team end-->
+        <!-- donors start-->
+        <section class="section donors no-padding-top">
+            <div class="container">
+                <div class="row margin-bottom">
+                    <div class="col-12">
+                        <div class="heading heading--primary heading--center"><span
+                                class="heading__pre-title">Donors</span>
+                            <h2 class="heading__title no-margin-bottom"><span>Who Help</span> <span>Us</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- donors slider start-->
+                        <div class="slider-holder">
+                            <div class="donors-slider donors-slider--style-1">
+                                <div class="donors-slider__item">
+                                    <div class="donors-slider__img"><img src="/front/img/donor_1.png" alt="donor" />
+                                    </div>
+                                </div>
+                                <div class="donors-slider__item">
+                                    <div class="donors-slider__img"><img src="/front/img/donor_2.png" alt="donor" />
+                                    </div>
+                                </div>
+                                <div class="donors-slider__item">
+                                    <div class="donors-slider__img"><img src="/front/img/donor_3.png" alt="donor" />
+                                    </div>
+                                </div>
+                                <div class="donors-slider__item">
+                                    <div class="donors-slider__img"><img src="/front/img/donor_4.png" alt="donor" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-
-                </div>
-            </div>
-        </div>
-        <div class="partners">
-            <div class="container">
-                <div class="row">
-                    <div id="partners-slider" class="owl-carousel owl-theme owl-transition clearfix">
-                        <div class="item">
-                            <a href="#"><img class="img-responsive" style="height: 100px" src="assets/img/others/logo-1.png"
-                                    alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img class="img-responsive" style="height: 100px" src="assets/img/others/logo-3.png"
-                                    alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img class="img-responsive" style="height: 100px" src="assets/img/others/logo-2.png"
-                                    alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img class="img-responsive" style="height: 100px" src="assets/img/others/logo-4.png"
-                                    alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img class="img-responsive"  style="height: 100px" src="assets/img/others/logo-5.png"
-                                    alt=""></a>
-                        </div>
+                        <!-- donors slider end-->
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+        <!-- donors end-->
+    </main>
 @endsection

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class BlogPostsChart extends ChartWidget
 {
     protected static ?string $heading = 'Total Blog Posts';
+    protected static ?int $sort = 11;
 
     protected function getData(): array
     {

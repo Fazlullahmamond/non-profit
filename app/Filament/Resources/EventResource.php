@@ -91,25 +91,25 @@ class EventResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('start_date')
                     ->dateTime()
-                   ->sortable()
+                    ->sortable()
                     ->toggleable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('end_date')
                     ->dateTime()
-                     ->sortable()
+                    ->sortable()
                     ->toggleable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('address')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('registers_deadline')
                     ->dateTime()
-                     ->sortable()
+                    ->sortable()
                     ->toggleable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('organizer')
-                ->sortable()
-                ->toggleable()
-                ->searchable(),
+                    ->sortable()
+                    ->toggleable()
+                    ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
                     ->circular()->defaultImageUrl(url('/storage/default/default.png'))
                     ->disk('event'),
@@ -124,6 +124,7 @@ class EventResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])

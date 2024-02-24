@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FrontCategoryController;
 use App\Http\Controllers\FrontPageController;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::get('/appeal/{id}/details', [FrontPageController::class, 'appeal_details'
 Route::get('/contact', [FrontPageController::class, 'contact'])->name('contact');
 Route::post('/contact', [FrontPageController::class, 'save_contact'])->name('contact_store');
 
+Route::get('/volunteers', [FrontPageController::class, 'volunteers'])->name('volunteers');
 Route::get('/become-volunteer', [FrontPageController::class, 'become_volunteer'])->name('become_volunteer');
 Route::post('/become-volunteer', [FrontPageController::class, 'save_volunteer'])->name('become_volunteer_store');
 
@@ -45,3 +47,7 @@ Route::get('/privacy_policy', [FrontPageController::class, 'privacy_policy'])->n
 
 
 
+
+Route::get('/billing-portal', function (Request $request) {
+    return $request->user()->redirectToBillingPortal(route('filament.user.pages.dashboard'));
+});

@@ -1,116 +1,69 @@
-@extends('layout.app')
+@extends('layout.front')
 @section('content')
-    <!-- Banner -->
-    <div class="page-banner">
-        <div class="container">
-            <div class="parallax-mask"></div>
-            <div class="section-name">
-                <h2>Blog List</h2>
-                <div class="short-text">
-                    <h5>Home<i class="fa fa-angle-double-right"></i>Blog List</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Blog-Wrapper -->
-    <div class="blog-page-wrapper">
+<main class="main">
+    <section class="promo-primary">
+        <picture>
+            <source srcset="/front/img/faq.jpg" media="(min-width: 992px)"/><img class="img--bg" src="/front/img/faq.jpg" alt="img"/>
+        </picture>
+        <div class="promo-primary__description"> <span>Compassion</span></div>
         <div class="container">
             <div class="row">
-                <div class="blog-posts col-md-8">
-                    @forelse ($blogs as $blog)
-                        <div class="blog-box">
-                            <div class="blog-top-desc">
-                                <div class="blog-date">
-                                    {{ $blog->created_at->format('j M Y') }}
-                                </div>
-                                <h4><a href="{{ route('blog_details', $blog->id) }}"> {{ $blog->title }}</a></h4>
-                                <i class="fa fa-folder-o"></i> <strong>{{ $blog->category->name }}</strong>
-                            </div>
-                            <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}">
-                            <div class="blog-btm-desc">
-                                <p>{!! Str::substr($blog->decription, 0, 100) !!}</p>
-                                <a href="{{ route('blog_details', $blog->id) }}" class="btn btn-min btn-solid"> Read More
-                                    <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </div>
+                <div class="col-auto">
+                    <div class="align-container">
+                        <div class="align-container__item"><span class="promo-primary__pre-title">Helpo</span>
+                            <h1 class="promo-primary__title"><span>Blog</span></h1>
                         </div>
-                    @empty
-                        Not Found, Try Agin
-                    @endforelse
-
-
-                    <div class="pagination-wrapper">
-                        {{ $blogs->links('vendor.pagination.bootstrap-4') }}
-                    </div>
-                </div>
-                <!-- sidebar -->
-                <div class="sidebar-wrapper col-md-4">
-                    <div class="sidebar">
-                        <div class="search-bar">
-                            <form action="{{ route('blogs') }}" method="GET">
-                                <div class="field">
-                                    <input type="text" name="search" placeholder="Type and Hit Enter"
-                                        value="{{ $search }}">
-                                    <button><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="widget">
-                            <div class="widget-title">
-                                <h4>Categories</h4>
-                                <div class="sep">
-                                    <div class="sep-inside"></div>
-                                </div>
-                            </div>
-                            <div class="categories">
-                                @foreach ($categories as $category)
-                                    <a
-                                        href="{{ route('category_blogs', $category->id) }}">{{ $category->name }}<span>{{ $category->blogs_count }}</span></a>
-                                @endforeach
-
-
-                            </div>
-                        </div>
-                        <div class="widget">
-                            <div class="widget-title">
-                                <h4>Recent Posts</h4>
-                                <div class="sep">
-                                    <div class="sep-inside"></div>
-                                </div>
-                            </div>
-                            <div class="recent-posts clearfix">
-                                @forelse ($latestBlogs  as $blog)
-                                    <div class="post clearfix">
-                                        <div class="image-wrapper">
-                                            <div class="mask"><a href="{{ route('blog_details', $blog->id) }}"><i
-                                                        class="fa fa-link"></i></a></div>
-                                            <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}"
-                                                style="height: 70px; width: 80px;">
-
-                                        </div>
-                                        <div class="info-block">
-                                            <a href="{{ route('blog_details', $blog->id) }}">
-                                                <h4>{{ $blog->title }}</h4>
-                                            </a>
-                                            <div class="meta">
-                                                <p><i class="fa fa-folder-o"></i>{{ $blog->category->name }}</p>
-                                                <span>&#x7C;</span>
-                                                <p><i class="fa fa-clock-o"></i>{{ $blog->created_at->format('j M Y') }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                @empty
-                                    No other blogs
-                                @endforelse
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- blog start-->
+    <section class="section blog background--light">
+        <div class="container">
+            <div class="row offset-margin">
+                @forelse ($latestBlogs  as $blog)
+
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <div class="blog-item blog-item--style-1">
+                        <div class="blog-item__img"><img class="img--bg" src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}"/><span class="blog-item__badge">{{ $blog->category->name }}</span></div>
+                        <div class="blog-item__content">
+                            <h6 class="blog-item__title"><a href="{{ route('blog_details', $blog->id) }}">{{ $blog->title }}d</a></h6>
+                            <p>{!! Str::substr($blog->description, 0, 100) !!}</p>
+                            <div class="blog-item__details"><span class="blog-item__date">{{ $blog->created_at->format('j M Y') }}</span></div>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                No other blogs
+            @endforelse
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- pagination start-->
+                    <ul class="pagination">
+                        <li class="pagination__item pagination__item--prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span>
+                        </li>
+                        <li class="pagination__item"><span>1</span></li>
+                        <li class="pagination__item pagination__item--active"><span>2</span></li>
+                        <li class="pagination__item"><span>3</span></li>
+                        <li class="pagination__item"><span>4</span></li>
+                        <li class="pagination__item"><span>5</span></li>
+                        <li class="pagination__item pagination__item--disabled">...</li>
+                        <li class="pagination__item"><span>12</span></li>
+                        <li class="pagination__item pagination__item--next"><span>Next</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                    <!-- pagination end-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog end-->
+    <!-- bottom bg start-->
+    <section class="bottom-background bottom-background--brown" style="background-image: url(img/bottom-bg.png)"></section>
+    <!-- bottom bg end-->
+</main>
+
 @endsection

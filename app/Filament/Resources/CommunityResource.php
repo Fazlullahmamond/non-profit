@@ -101,6 +101,7 @@ class CommunityResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            
             ->filters([
                 //
             ])
