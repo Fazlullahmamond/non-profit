@@ -1,112 +1,87 @@
-@extends('layout.app')
+@extends('layout.front')
 @section('content')
-    <!-- Banner -->
-    <div class="page-banner">
-        <div class="container">
-            <div class="parallax-mask"></div>
-            <div class="section-name">
-                <h2>{{ $blog->title }}</h2>
-                <div class="short-text">
-                    <h5>Home<i class="fa fa-angle-double-right"></i>Blog details</h5>
+    <main class="main">
+        <section class="promo-primary">
+            <picture>
+                <source srcset="/front/img/faq.jpg" media="(min-width: 992px)" /><img class="img--bg" src="/front/img/faq.jpg"
+                    alt="img" />
+            </picture>
+            <div class="promo-primary__description"> <span>Compassion</span></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="align-container">
+                            <div class="align-container__item"><span class="promo-primary__pre-title">Helpo</span>
+                                <h1 class="promo-primary__title"><span>Blog</span> <span>Post</span></h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <!-- Blog-Wrapper -->
-    <div class="blog-page-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="blog-posts col-md-8">
-                    <div class="blog-post single-post">
-                        <a href="{{ route('blog_details', $blog->id) }}">
-                            <h2>{{ $blog->title }}</h2>
-                        </a>
-                        <div class="meta">
-                            <h5><i class="fa fa-folder-o"></i><a
-                                    href="{{ route('category_blogs', $blog->category_id) }}">{{ $blog->category->name }}</a>
-                            </h5>
-                            <h5><i class="fa fa-clock-o"></i><a>{{ $blog->created_at->format('j M Y') }}</a></h5>
-
-                        </div>
-                        <div class="img-wrapper">
-                            <img class="img-responsive" src="/storage/blog_images/{{ $blog->image }}"
-                                alt="{{ $blog->title }}">
-
-                        </div>
-
-                        {!! $blog->description !!}
-
-                    </div>
-
-                </div>
-               <!-- sidebar -->
-               <div class="sidebar-wrapper col-md-4">
-                <div class="sidebar">
-                    <div class="search-bar">
-                        <form action="#">
-                            <div class="field">
-                                <input type="text" name="search" placeholder="Type and Hit Enter">
-                                <button><i class="fa fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="widget">
-                        <div class="widget-title">
-                            <h4>Categories</h4>
-                            <div class="sep">
-                                <div class="sep-inside"></div>
+        </section>
+        <!-- blog post start-->
+        <section class="section blog-post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-9">
+                        <div class="blog-post__top">
+                            <div class="blog-post__img"><img class="img--bg" src="/storage/blog_images/{{ $blog->image }}"
+                                    alt="{{ $blog->title }}" /></div>
+                            <div class="blog-post__description">
+                                <div class="row">
+                                    <div class="col-6"><span class="blog-post__name"><a
+                                                href="{{ route('category_blogs', $blog->category_id) }}"
+                                                class="blog-item__badge">{{ $blog->category->name }}</a></span></div>
+                                    <div class="col-6 text-right"><span
+                                            class="blog-post__date">{{ $blog->created_at->format('j M Y') }}</span><span>
+                                            <svg class="icon">
+                                                <use xlink:href="#comment"></use>
+                                            </svg> 5</span></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="categories">
-                            @foreach ($categories as $category)
-                                <a
-                                    href="{{ route('category_blogs', $category->id) }}">{{ $category->name }}<span>{{ $category->blogs_count }}</span></a>
-                            @endforeach
+                        <h6 class="blog-post__title">{{ $blog->title }}</h6>
+                        <p>{!! $blog->description !!}</p>
 
 
-                        </div>
                     </div>
-                    <div class="widget">
-                        <div class="widget-title">
-                            <h4>Recent Posts</h4>
-                            <div class="sep">
-                                <div class="sep-inside"></div>
-                            </div>
-                        </div>
-                        <div class="recent-posts clearfix">
-                            @forelse ($latestBlogs  as $blog)
-                                <div class="post clearfix">
-                                    <div class="image-wrapper">
-                                        <div class="mask"><a href="{{ route('blog_details', $blog->id) }}"><i
-                                                    class="fa fa-link"></i></a></div>
-                                        <img src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}" style="height: 70px; width: 80px;">
+                    <div class="col-md-4 col-lg-3">
+                        <div class="blog-post__category-holder">
+                            <h6 class="blog-post__title">Category</h6>
+                            <ul class="blog-post__category">
+                                @foreach ($categories as $category)
+                                    <li>
+                                        <a
+                                            href="{{ route('category_blogs', $category->id) }}">{{ $category->name }}</span></a>
+                                    </li>
+                                @endforeach
 
-                                    </div>
-                                    <div class="info-block">
-                                        <a href="{{ route('blog_details', $blog->id) }}">
-                                            <h4>{{ $blog->title }}</h4>
-                                        </a>
-                                        <div class="meta">
-                                            <p><i class="fa fa-folder-o"></i>{{ $blog->category->name }}</p>
-                                            <span>&#x7C;</span>
-                                            <p><i class="fa fa-clock-o"></i>{{ $blog->created_at->format('j M Y') }}
-                                            </p>
+                            </ul>
+                        </div>
+                        <h6 class="blog-post__title">Recent Posts</h6>
+                        <div class="recent-posts">
+
+                            <div class="recent-posts clearfix">
+                                @forelse ($latestBlogs  as $blog)
+                                    <div class="recent-posts__item">
+                                        <div class="recent-posts__item-img"><img class="img--bg"
+                                                src="/storage/blog_images/{{ $blog->image }}" alt="{{ $blog->title }}" />
+                                        </div>
+                                        <div class="recent-posts__item-description"><a class="recent-posts__item-link"
+                                                href="{{ route('blog_details', $blog->id) }}">{{ $blog->title }}</a><span
+                                                class="recent-posts__item-value">{{ $blog->created_at->format('j M Y') }}</span>
                                         </div>
                                     </div>
-                                </div>
-
-                            @empty
-                            No other blogs
-                            @endforelse
+                                @empty
+                                    No other blogs
+                                @endforelse
+                            </div>
 
                         </div>
                     </div>
-
                 </div>
-            </div>
-            </div>
-        </div>
-    </div>
+        </section>
+        <!-- blog post end-->
+
+    </main>
 @endsection
